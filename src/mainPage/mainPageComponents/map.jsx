@@ -1,9 +1,8 @@
 import "../mainPage.css";
-import React, { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup,  } from "react-leaflet";
+import React, { useEffect, useState } from "react";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import Incident from "../../incident";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -13,7 +12,19 @@ L.Icon.Default.mergeOptions({
 });
 
 function Map({onMove,incidents,onMarkerClick}) {
-  
+  const [zoomLevel, setZoomLevel] = useState(13); // Default zoom level
+  const maxZoom = 13; // Threshold zoom level for displaying markers
+
+  // Custom hook to listen to map events
+  function MapEventsHandler() {
+    const map = useMapEvents({
+      zoomend: () => {
+        const newZoom = map.getZoom();
+        setZoomLevel(newZoom); // Update zoom level when zooming ends
+      },
+    });
+    return null;
+  }
   return (
     <div className="map-container">
       <MapContainer
@@ -25,7 +36,10 @@ function Map({onMove,incidents,onMarkerClick}) {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; OpenStreetMap contributors"
         />
-        {incidents.map((incident, index) => (
+        <MapEventsHandler />
+        {incidents
+          .filter(() => zoomLevel >= maxZoom)
+          .map((incident, index) => (
           <Marker
             key={index}
             position={incident.location} // [latitude, longitude]
