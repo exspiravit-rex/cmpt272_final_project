@@ -1,33 +1,25 @@
-# cmpt272_final_project
- Final group project for CMPT 272 Fall 2024
+# Metro Vancouver 9-1-1 Emergency Reporting System
+This project was created for the final project of CMPT 272 Fall 2024. The project's goal was to replace the legacy system with a modern and user-friendly, web-based emergency reporting system designed for Metro Vancouver's E-Comm 9-1-1 service. The system allows civilians to report emergencies, operators to manage and resolve reports, and provides a map-based interface for better situational awareness.
 
+## 🚀 Project Overview
+E-Comm handles over one million emergency calls annually. Our system bridges the gap between the public and first responders by enabling users to:
+- Submit emergency reports with details such as the nature of the emergency, location, and additional comments.
+- View all active emergency reports on an interactive map with markers.
+- See an up-to-date, sortable list of reports synchronized with the map's zoom and pan.
+- Review emergency details by interacting with map markers or list items.
+- Modify or delete reports (with valid passcode authorization).
+The platform is built with usability and functionality in mind, offering real-time feedback, secure passcode verification using MD5 hashing, and seamless storage with the DOM Storage API.
 
+## 📋 Features
+- Emergency Report Submission
+- Interactive Map with Leaflet
+- Details and Interactivity
+- Report Management
+- Secure Storage
+- Responsive Design
 
-TODO: 
-    - Create incident class
-        - Should be able to modify each variable
-
-    - Leaflet map 
-        - Display all incidents on the map
-        - Display incident information on mouse-over
-            - Where it is
-            - What time
-
-        - CLicking incident shows picture
-            - All info
-            - Picture
-            - Modify button
-                - Allows modification of the info in the incident
-                - needs password
-
-        - Zoom-in should display incidents in the area
-            - Zooming out shouldn't display all points.
-                - Once we are a certain amount zoomed in, the points will appear
-
-    - List of incidents under the map
-        - Should be able to sort the list by title
-
-    - Report button
-        - Create a new instance of the incident class based on user input
-    
-
+## 🛠️ Tools and Technologies Used
+- Languages: HTML, CSS, JavaScript, TypeScript (optional).
+- Libraries & Frameworks: Bootstrap (for styling and responsive design), Leaflet (for map integration with OpenStreetMap).
+- Storage: DOM Storage API.
+- Security: MD5 hashing for passcode management.
