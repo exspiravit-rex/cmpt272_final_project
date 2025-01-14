@@ -18,7 +18,7 @@ The platform is built with usability and functionality in mind, offering real-ti
 - Secure Storage
 
 ## 🛠️ Tools and Technologies Used
-- Languages: HTML, CSS, JavaScript, TypeScript (optional).
-- Libraries & Frameworks: Bootstrap (for styling and responsive design), Leaflet (for map integration with OpenStreetMap).
-- Storage: DOM Storage API.
-- Security: MD5 hashing for passcode management.
+- Languages: HTML, CSS, JavaScript.
+- Libraries, Frameworks & APIs: ReactJS, Leaflet.
+- Storage: DOM Storage.
+- Security: MD5 hashing.
