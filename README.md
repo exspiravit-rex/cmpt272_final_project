@@ -13,10 +13,9 @@ The platform is built with usability and functionality in mind, offering real-ti
 ## 📋 Features
 - Emergency Report Submission
 - Interactive Map with Leaflet
-- Details and Interactivity
+- Incident Details and Interactivity
 - Report Management
 - Secure Storage
-- Responsive Design
 
 ## 🛠️ Tools and Technologies Used
 - Languages: HTML, CSS, JavaScript, TypeScript (optional).
